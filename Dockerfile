@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Sébastien Prud'homme <sebastien.prudhomme@gmail.com>
 
-ENV KUBERNETES_VERSION 1.8.6
+ENV KUBERNETES_VERSION 1.12.0
 ENV HELM_VERSION 2.11.0
 
 RUN apk add -U openssl curl tar gzip bash ca-certificates git && \
@@ -21,3 +21,4 @@ RUN curl -O "https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION
 RUN curl -L -o /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl" && \
     chmod +x /usr/bin/kubectl && \
     kubectl version --client
+    
