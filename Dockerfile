@@ -18,6 +18,6 @@ RUN curl -O "https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION
     helm version --client && \
     tiller -version
 
-RUN curl -L -o /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl"
+RUN curl -L -o /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl" && \
     chmod +x /usr/bin/kubectl && \
     kubectl version --client
